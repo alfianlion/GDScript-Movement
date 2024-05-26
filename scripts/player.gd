@@ -1,17 +1,15 @@
 extends CharacterBody2D
 
-@export var speed = 3000
+@export var speed = 300
 
-func get_input(delta):
+func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	#print(input_direction)
-	input_direction.x += 1
-	velocity = input_direction * speed * delta 
+	velocity = input_direction * speed 
 
 func _input(event):
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_input(delta)
+	get_input()
 	move_and_slide()

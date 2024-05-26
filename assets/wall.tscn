@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://7xb36y6h3lij"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_frv6n"]
+size = Vector2(50, 50)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k4kv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bksr0"]
+size = Vector2(50, 50)
+
+[node name="Wall" type="Node2D"]
+position = Vector2(126, 109)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+texture = SubResource("PlaceholderTexture2D_frv6n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_k4kv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_bksr0")
